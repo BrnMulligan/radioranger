@@ -1,0 +1,39 @@
+﻿@{
+    Page.Title = "Results";
+}
+
+<h4>There is some stuff here</h4>
+
+@{
+    var fName = Request["AppfirstName"];
+    var lName = Request["ApplastName"];
+    var Email = Request["appEmailAddress"];
+    var Subject = Request["appSubject"];
+    var Message = Request["appMessage"];
+
+    if (IsPost)
+    {
+        fName = Request["AppfirstName"];
+        lName = Request["ApplastName"];
+        Email = Request["appEmailAddress"];
+        Subject = Request["appSubject"];
+        Message = Request["appMessage"];
+
+    }
+    else
+    {
+        @: No Values Received
+    }
+    //This is were the html disign begins. The variables are local only.
+        <h2>Thank You @fName @lName, for your inquery!</h2>
+        <h3> Your Email Address is: @Email</h3>
+        <h3> Your Subject : @Subject</h3>
+        <h3> Your Message is:@Message</h3>
+        <p></p>
+        <h5>Hey, we might even get back to you!</h5>
+
+
+
+
+}
+

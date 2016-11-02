@@ -1,0 +1,98 @@
+﻿<link href="~/Content/Radio.css" rel="stylesheet" type="text/css" />
+
+@{
+    Page.Title = "RadioRanger";
+    var currentBroadcast = "";
+}
+
+<hgroup class="title">
+    @*   <h1>@Page.Title.</h1>*@
+    <h2>Ranger Radio</h2>
+</hgroup>
+<head>
+    <title></title>
+    @*.................................................Java script ..............................*@
+
+    <script type="text/javascript">
+
+        function RadioModalCurrent() {
+            alert("Ya! This is the current Broadcast!");
+            @{
+
+
+                }
+
+            var myText = document.getElementById("test");
+            document.getElementById("test").innerHTML = "@currentBroadcast";
+        }
+
+        function RadioModalArchive() {
+
+            @{
+
+                currentBroadcast = "~/Content/Music/Yes/Dangerous.mp3";
+
+                }
+            alert("Ya! This is the Archive Broadcast(s)!");
+        }
+
+        function RadioModalSomething() {
+            alert("Ya! This is Something Else!")
+        }
+
+    </script>
+    @*................................................. end script ..............................*@
+</head>
+
+
+<article id="RadioPage">
+    <p>
+        <strong>This is were the meat of my project is located, unless, of course, your veagan. Then everything is a potato.</strong><br />
+        The connection to the Radio Station. Selection of
+        podcasts, events and all those items that the radio club creates.
+        The next meeting with the client to review the current work and aquire more data is set for Monday, 10 October.
+
+        "~/Content/Music/Yes/Dangerous.mp3"
+    </p>
+    
+    <form>
+        <p>Add three buttons to select:</p>
+        <input type="submit" name="button" id="currentID" formmethod="post" value="Current" />
+        <input type="submit" name="button" id="archiveID" formmethod="post" value="Archive"/>
+        <input type="submit" name="button" id="randomID" formmethod="post" value="Random"/>
+
+        <article id="currentBroadcast">
+         
+        </article>
+    </form>
+
+    <p>
+        The goal of Olympian Radio is to voice the opinions of the Olympic College Culture in an informing and entertaining
+        format.
+    </p>
+</article>
+
+@*@{
+    string[] music = { "AintNoRestForTheWicked.mp4", "CyndiLauperTheFarawayNearby.mp4", "CyndiLauperProductofMisery.mp4", "IngridMichaelsonDeafWestTheatrePresentHellNo.mp4" };
+    if (IsPost)
+    {
+        //if (@buttonPushed == "Current Broadcast") /*"Select (id,noun name,type,) lastItemIn from table"*/
+        currentBroadcast = "~/Content/Music/Yes/Dangerous.mp3";  //remove hard coding. Replace with variable
+        <p>@currentBroadcast</p>
+        //{
+        //    currentBroadcast = "~/Content/Music/Dangerous.mp3";
+        //} else if (@buttonPushed == "Broadcast Archive";  /*"Select * from table where id='this one'"
+        //Create a table for display of records selected*/
+        // Get count, fill table
+        for (int i = 0; i < 4; i++) //for each podcast in folder............
+        {
+            <p>@music[i]</p>
+            <h1><script>document.getElementById("test").innerHTML = "@music[i]";</script></h1>
+        }
+        //determine if the file is audio or video
+        <p>After list displayed</p>
+
+
+        }
+    }*@
+<p id="test">This is the test spot</p>

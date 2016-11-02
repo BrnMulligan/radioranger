@@ -1,0 +1,47 @@
+﻿@{
+    Page.Title = "Student Application";
+}
+<link href="~/Content/StudentApplications.css" rel="stylesheet" type="text/css" />
+
+
+<h5 id="pageHead">For the Students, By the Students</h5>
+
+<section id="text">
+    <p id="moreText">
+        <strong>Ranger News</strong> is made up of <strong>Olympic College students</strong> from all sorts of
+        backgrounds. We are always accepting new volunteers and workers.<br/>If you would
+        like to submit your work, become a volunteer,ask about a job, or ask any
+        questions, feel free to:
+    </p>
+
+    <p id="contact"> Call: <strong>(360) 475-7690</strong>
+                <br/> Visit: Tech 101
+                <br/> or use this form.</p>
+
+    <p id="evenMoreText">We are currently looking to fill Positions
+                        of the students graduating!</p>
+</section>
+
+<section id="studentForm">
+    <form name="studentApplication" id="studentApp"
+          action="~/ShowResult" method="post">
+
+        <fieldset id="studentAppInfo">
+            <legend style="color:red;">All Fields are Required</legend>
+                <label for="firstname">First Name:</label>
+                <input name="AppfirstName" id="firstName" value="@Request["firstName"]" />
+                <br/>
+                <label for="lastname">Last Name:</label>
+                <input name="ApplastName" id="lastName" value="@Request["lastName"]" />
+            <label for="email" class="lblEmail">Email:</label>
+           <input type="email" name="appEmailAddress" id="emailAddress" value="@Request["email"]" />
+            <label for="subject">Subject:</label>
+            <input name="appSubject" id="subject" value="@Request["subject"]" />
+            <label for="message">Message:</label>
+            <input name="appMessage" id="message" value="@Request["message"]" />
+
+            <input id="appSend" type="submit" value="Send" />
+        </fieldset>
+    </form>
+</section>
+
